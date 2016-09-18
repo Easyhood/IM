@@ -16,7 +16,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        et_account = (EditText) findViewById(R.id.et_account);
+        et_account = ( EditText ) findViewById ( R.id.et_account );
         et_pwd = (EditText) findViewById(R.id.et_pwd);
 
         new Thread(){
