@@ -20,7 +20,6 @@ public class ServerClient {
 							System.out.println("客户端"+socket+"连接进来了");
 							new MessageThread(socket).start();
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
 					}
@@ -28,7 +27,6 @@ public class ServerClient {
 				};
 			}.start();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -41,7 +39,6 @@ public class ServerClient {
 			try {
 				inputStream = new DataInputStream(socket.getInputStream());
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -52,7 +49,6 @@ public class ServerClient {
 					String result = inputStream.readUTF();
 					System.out.println(result);
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

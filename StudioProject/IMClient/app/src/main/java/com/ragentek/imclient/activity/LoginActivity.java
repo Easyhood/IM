@@ -18,7 +18,7 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
     private String account;
     private String pwd;
     private QQConnection conn;
-    private String ip = "192.168.1.100" ;
+    private String ip = "192.168.15.82" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,17 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
             String result = msg.content;
             System.out.println(result);
             //打开好友列表activity
-            //TODO 2016年9月18日17:06:58
+            Intent intent = new Intent(getApplicationContext(), BuddylistActivity.class);
+            intent.putExtra("message",msg);
+            startActivity(intent);
+            finish();
+
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        conn.removeListener(this);
+        super.onDestroy();
     }
 }
