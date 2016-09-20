@@ -18,7 +18,6 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
     private String account;
     private String pwd;
     private QQConnection conn;
-    private String ip = "192.168.15.82" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +31,7 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
             public void run() {
                 super.run();
                 //创建QQConnection对象
-                conn = new QQConnection(ip, 5225);
+                conn = new QQConnection("193.168.15.82", 5225);
                 //添加监听器
                 conn.addListener(LoginActivity.this);
                 //连接到服务端
