@@ -27,16 +27,14 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
         et_pwd = (EditText) findViewById(R.id.et_pwd);
 
         new Thread(){
-            @Override
             public void run() {
-                super.run();
                 //创建QQConnection对象
-                conn = new QQConnection("193.168.15.82", 5225);
+                conn = new QQConnection("192.168.15.82",5225);
                 //添加监听器
                 conn.addListener(LoginActivity.this);
                 //连接到服务端
                 conn.connect();
-            }
+            } ;
         }.start();
     }
 

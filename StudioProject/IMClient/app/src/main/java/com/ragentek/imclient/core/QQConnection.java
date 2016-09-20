@@ -7,6 +7,7 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 /**
@@ -46,6 +47,8 @@ public class QQConnection extends Thread {
             flag = true;
             //监听服务端发来的消息
             super.start();
+        } catch (UnknownHostException e) {
+            e.printStackTrace ();
         } catch (IOException e) {
             e.printStackTrace ();
         }

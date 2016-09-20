@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ragentek.imclient.activity">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:name="com.ragentek.imclient.MyApplication"
         android:allowBackup="true"
@@ -26,7 +26,7 @@
             android:exported="true" />
 
         <activity android:name=".BuddylistActivity" />
-        <activity android:name=".ChatListActivity"></activity>
+        <activity android:name=".ChatListActivity"/>
     </application>
 
 </manifest>
