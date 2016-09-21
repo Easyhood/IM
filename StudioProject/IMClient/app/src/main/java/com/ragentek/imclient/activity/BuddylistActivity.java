@@ -85,7 +85,7 @@ public class BuddylistActivity extends BaseActivity implements QQMessageListener
                 view = convertView;
                 holder = (ViewHolder) convertView.getTag();
             }
-            holder.tv_nick.setTag(buddyInfos.get(position).nick);
+            holder.tv_nick.setText(buddyInfos.get(position).nick);
             holder.tv_state.setText(buddyInfos.get(position).account+"@outlook.com");
             return view;
         }

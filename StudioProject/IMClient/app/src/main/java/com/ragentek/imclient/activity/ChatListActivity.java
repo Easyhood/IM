@@ -49,6 +49,7 @@ public class ChatListActivity extends BaseActivity implements QQMessageListener 
         //获取当前账号放到发送消息msg.from
         msg.type = QQMessageType.MSG_TYPE_CHAT_P2P;
         msg.from = application.getAccount();
+        msg.to = toAccount;
         msg.content = chatContent;
         messages.add(msg);
         adapter.notifyDataSetChanged();
@@ -64,8 +65,19 @@ public class ChatListActivity extends BaseActivity implements QQMessageListener 
         }
     }
     @Override
-    public void onMessageReceive(QQMessage msg) {
-
+    public void onMessageReceive(final QQMessage msg) {
+        if (msg != null && msg.type.equals(QQMessageType.MSG_TYPE_CHAT_P2P)){
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                  messages.add(msg);
+                  adapter.notifyDataSetChanged();
+                    if (messages.size()>0){
+                        lv_list.setSelection(messages.size()-1);
+                    }
+                }
+            });
+        }
     }
 
     class MyAdapter extends BaseAdapter{

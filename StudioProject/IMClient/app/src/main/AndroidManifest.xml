@@ -18,13 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <service android:name="com.ragentek.imclient.Service.MessageService"/>
         <activity android:name=".LoginActivity" />
-
-        <service
-            android:name="com.ragentek.imclient.Service.MessageService"
-            android:enabled="true"
-            android:exported="true" />
-
         <activity android:name=".BuddylistActivity" />
         <activity android:name=".ChatListActivity"/>
     </application>

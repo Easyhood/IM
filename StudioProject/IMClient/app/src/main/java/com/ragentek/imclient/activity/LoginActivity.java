@@ -13,10 +13,8 @@ import com.ragentek.imclient.core.QQMessageListener;
 
 public class LoginActivity extends BaseActivity implements QQMessageListener{
     private EditText et_account;
-
     private EditText et_pwd;
     private String account;
-    private String pwd;
     private QQConnection conn;
 
     @Override
@@ -34,13 +32,13 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
                 conn.addListener(LoginActivity.this);
                 //连接到服务端
                 conn.connect();
-            } ;
+            }
         }.start();
     }
 
     public void login(View view){
         account = et_account.getText().toString();
-        pwd = et_pwd.getText().toString();
+        String pwd = et_pwd.getText().toString();
 
         if (account != null && account.trim().length() > 0 && pwd != null && pwd.trim().length() > 0) {
             QQMessage msg = new QQMessage();
