@@ -6,9 +6,9 @@ import java.io.Serializable;
 
 
 public class QQMessage implements Serializable{
+	public String fromNick;
 	public String type ;
 	public String from ;
-	public String fromNick;
 	public int fromAvatar;
 	public String to;
 	public String content ;

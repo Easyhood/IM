@@ -9,7 +9,7 @@ import java.util.Date;
 public class ServerClient {
 	public static void main(String[] args) {
 		try {
-			final ServerSocket server = new ServerSocket(12345);
+			final ServerSocket server = new ServerSocket(5225);
 			System.out.println("服务端打开"+new Date());
 			
 			new Thread(){
