@@ -66,10 +66,8 @@ public class LoginActivity extends BaseActivity implements QQMessageListener{
             intent.putExtra("message",msg);
             startActivity(intent);
             finish();
-
         }
     }
-
     @Override
     protected void onDestroy() {
         conn.removeListener(this);
